@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Cá Nhân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .profile-header {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .info-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .skill-bar {
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .info-card a {
+            cursor: pointer;
+            color: #000; /* Màu mặc định của text */
+            text-decoration: none;
+        }
+
+        .info-card a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header class="profile-header text-center">
+        <img src="https://scontent-hkg1-2.xx.fbcdn.net/v/t1.15752-9/450945053_3360505244245127_3243346262691681510_n.jpg?stp=dst-jpg_p1080x2048&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=DrfHA-uw-xcQ7kNvgH6Fws4&_nc_ht=scontent-hkg1-2.xx&oh=03_Q7cD1QHBeVJp-JD4hiCt4DyZXpFy39hTzK1g4NA8pPxzdlYzhw&oe=66C6CD93" alt="Ảnh đại diện" class="profile-img mb-3">
+        <h1>Phạm Quang Đức Anh</h1>
+        <p class="lead">Coder & Photographer</p>
+        <div class="mt-3">
+            <a href="mailto:anhmint.2003@gmail.com" class="text-white me-3"><i class="fas fa-envelope"></i> anhmint.2003@gmail.com</a>
+            <a href="tel:+84966181628" class="text-white me-3"><i class="fas fa-phone"></i> +84 966 181 628</a>
+            <a href="https://github.com/anhmintdeptrynhatvietnam" target="_blank" class="text-white me-3"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.flickr.com/photos/189539766@N02/" target="_blank" class="text-white"><i class="fa-brands fa-flickr"></i> Flickr</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <div class="info-card">
+                    <h3 class="section-title"><i class="fas fa-user me-2"></i>Thông Tin Cá Nhân</h3>
+                    <p><strong>Ngày sinh:</strong> 07/08/2003</p>
+                    <p><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</p>
+                    <p><strong>Email:</strong> anhmint.2003@gmail.com</p>
+                    <p><strong>Số điện thoại:</strong> 0966181628</p>
+                </div> -->
+                
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Học Vấn</h3>
+                    <p><strong>2018 - 2021:</strong> THPT Xuân Phương</p>
+                    <p><strong>Khối:</strong> Khoa học tự nhên - Ban A</p>
+                    <p><strong>2021 - nay:</strong> Đại học Kinh doanh & Công nghệ Hà Nội</p>
+                    <p><strong>Khoa:</strong> Công nghệ thông tin | <strong>Chuyên ngành:</strong> Kỹ thuật phần mềm</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fas fa-briefcase me-2"></i>Kinh Nghiệm Làm Việc</h3>
+                    <h4><i class="fa fa-code"></i> Coder</h4>
+                    <p><strong>3/2022 - 8/2022:</strong> Thực tập tại Công ty Nacencomm</p>
+                    <p><strong>3/2024 - nay:</strong> Fullstack Intern tại Công ty Simax</p>
+                    <p> -----------------------------------------------------------------------------</p></p>
+                    <h4><i class="fa fa-camera"></i> Media</h4>
+                    <p><strong>6/2022 - nay: </strong>Freelancer Media : Event, nội ngoại thất, kỷ yếu, ...  </p>
+                    <p><strong>2/2023 - 10/2023: </strong>Team leader kỹ thuật & tiền kỳ tại Công ty UpSwing Media</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fa fa-level-up"></i> Kỹ Năng</h3>
+                    <h4><i class="fa fa-code"></i> Coder</h4>
+                    <p><strong>HTML/CSS</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>JavaScript</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>C#</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>SQL Server</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p> -----------------------------------------------------------------------------</p></p>
+
+                    <h4><i class="fa fa-camera"></i> Media</h4>
+                    <p><strong>Sự kiện</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>Chân dung</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>Phong cảnh</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><strong>Nội, ngoại thất</strong></p>
+                    <div class="progress skill-bar">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 99%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fas fa-project-diagram me-2"></i>Dự Án Nổi Bật</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4><i class="fa fa-code"></i> Coder</h4>
+                            <ul>
+                                <li><strong><a href="">Hệ thống giao việc nội bộ:</a></strong> Phát triển ứng dụng web cho phép quản lý, giao việc, báo cáo hiệu suất của từng nhân sự.</li>
+                                <li><strong><a href="">Hệ thống xem thông tin thời tiết:</a></strong> Cập nhật thông tin thời tiết của thành phố bạn muốn</li>
+                                <li><strong><a href="">Hệ thống đặt phòng khách sạn Booking Room.VN:</a></strong> Phát triển ứng dụng web cho phép môi giới đặt phòng trung gian cho các khách sạn tại các thành phố du lịch</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h4><i class="fa fa-camera"></i> Media</h4>
+                            <ul>
+                                <li><strong><a href="https://www.flickr.com/photos/189539766@N02/" target="_blank">Kỷ yếu:</a></strong> Những buổi lễ tốt nghiệp, kỷ yếu, những khoảnh khắc kỷ niệm đáng nhớ thời học sinh, sinh viên.</li>
+                                <li><strong><a href="https://drive.google.com/drive/folders/11zki82sMnXmUBFRQMOeLJa8ee1mZ2Ptj" target="_blank">Sự kiện:</a></strong> Sự kiện khai trương câu lạc bộ Poker, các sự kiện tổng kết.</li>
+                                <li><strong><a href="https://www.tiktok.com/@hanyskitchen?lang=vi-VN" target="_blank">Tiktok:</a></strong> Xây dựng, phát triển hình ảnh cho các kênh Tiktok</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4 mb-5">
+            <div class="col-12">
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fa fa-heart" aria-hidden="true"></i> Sở thích</h3>
+                   <div class="row">
+                    <div class="col-4">
+                        <ul>
+                            <li>Chụp ảnh</li>
+                            <li>Du lịch</li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <ul>
+                            <li>Ăn vặt</li>
+                            <li>Xem phim</li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <ul>
+                            <li>Code</li>
+                            <li>Chơi thể thao</li>
+                        </ul>
+                    </div>
+                </div>
+                   </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12">
+                <div class="info-card">
+                    <h3 class="section-title"><i class="fas fa-language me-2"></i>Ngôn Ngữ</h3>
+                    <p><strong>Tiếng Việt:</strong> Bản ngữ</p>
+                    <p><strong>Tiếng Anh:</strong> Đọc hiểu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
