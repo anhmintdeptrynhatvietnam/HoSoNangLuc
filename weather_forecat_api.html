@@ -6,20 +6,86 @@
     <title>Thông Tin Thời Tiết</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Giữ nguyên CSS từ ví dụ trước */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .weather-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #city-input {
+            flex-grow: 1;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .search-box button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        #weather-info {
+            text-align: center;
+        }
+        .weather-icon img {
+            width: 100px;
+            height: 100px;
+        }
+        .temp {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .detail {
+            text-align: center;
+        }
+        .detail i {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
-<body>
+<body class="d-flex justify-content-center">
     <div class="weather-container">
-        <h2>Thông Tin Thời Tiết</h2>
+        <h2 class="mb-4">Thông Tin Thời Tiết</h2>
         <div class="search-box">
-            <input type="text" id="city-input" placeholder="Nhập tên thành phố">
-            <button onclick="getWeather()"><i class="fas fa-search"></i></button>
+            <input type="text" id="city-input" class="form-control" placeholder="Nhập tên thành phố">
+            <button class="btn btn-primary" onclick="getWeather()"><i class="fas fa-search"></i></button>
         </div>
-        <div id="weather-info"></div>
+        <div id="weather-info" class="mt-4"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const apiKey = '0b9027af32434715bb981019242307'; // Thay thế bằng API key của bạn từ WeatherAPI
 
@@ -38,8 +104,7 @@
                 const data = await response.json();
 
                 if (data.error) {
-                    weatherInfo.innerHTML = 'Không tìm thấy thành phố. Vui lòng kiểm tra lại.';
-                    weatherInfo.style.display = 'block';
+                    weatherInfo.innerHTML = '<div class="alert alert-danger">Không tìm thấy thành phố. Vui lòng kiểm tra lại.</div>';
                 } else {
                     const weather = data.current.condition.text;
                     const temp = Math.round(data.current.temp_c);
@@ -51,7 +116,7 @@
                         <div class="weather-icon"><img src="${icon}" alt="Weather icon"></div>
                         <div class="temp">${temp}°C</div>
                         <div class="description">${weather}</div>
-                        <h3>${city}</h3>
+                        <h3 class="mt-3 mb-4">${city}</h3>
                         <div class="details">
                             <div class="detail">
                                 <i class="fas fa-tint"></i>
@@ -65,12 +130,10 @@
                             </div>
                         </div>
                     `;
-                    weatherInfo.style.display = 'block';
                 }
             } catch (error) {
                 console.error('Lỗi:', error);
-                weatherInfo.innerHTML = 'Đã xảy ra lỗi khi lấy thông tin thời tiết. Vui lòng thử lại sau.';
-                weatherInfo.style.display = 'block';
+                weatherInfo.innerHTML = '<div class="alert alert-danger">Đã xảy ra lỗi khi lấy thông tin thời tiết. Vui lòng thử lại sau.</div>';
             }
         }
     </script>
