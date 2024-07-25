@@ -1,0 +1,39 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.hero-section {
+    background: url('https://example.com/family-tree-background.jpg') no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.section-title {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.member-card {
+    transition: transform 0.3s;
+}
+.member-card:hover {
+    transform: translateY(-5px);
+}
+.event-card {
+    border-left: 4px solid #007bff;
+}
+.footer {
+    background-color: #343a40;
+    color: white;
+}
